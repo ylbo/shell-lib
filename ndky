@@ -1,0 +1,50 @@
+menu(){
+	echo "          ****************************"
+	echo "          *   1  启动vpn             *"
+	echo "          *   2  关闭vpn             *"
+	echo "          *   3  运行jupyter notebook*"
+	echo "          *   4  关闭jupyter notebook*"
+	echo "          *   5  查看jupyter运行日志 *"
+	echo "          *   6  产看vpn运行状态     *"
+	echo "          *   0  退出脚本            *"
+	echo "          ****************************"
+}
+
+x="10"
+while ((x!=0)) 
+do
+	menu
+        read -p "请输入数字:" x
+	case $x in
+	1)  	echo "输入配置文件名"
+		read f
+		wg-quick up $f
+	;;
+	2)  	echo "输入配置文件名"
+		read f
+		wg-quick down $f
+	;;
+	3) 	nohup jupyter-notebook --allow-root > jupyter.log &
+		echo ""
+	;;
+	4)	serverpid=`ps -aux|grep jupyter-notebook|grep -v grep|awk '{print $2}'` 
+    
+		kill -9 $serverpid
+    
+		if [ $? -eq 0 ]; 
+		then
+			echo "                jupyter关闭成功"
+    		else
+			echo "                jupyter关闭失败"
+    
+		fi
+	
+	;;
+	5)  	cat jupyter.log
+	;;
+	6)	wg show
+	;;
+	0)   	exit
+	;;
+	esac
+done
