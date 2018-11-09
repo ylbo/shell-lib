@@ -1,7 +1,8 @@
 menu(){
 	echo "  1 stop wg0"
 	echo "  2 start wg0"
-	echo "  3 修改配置wg0"
+	echo "  3 产看wg状态"
+	echo "  4 修改配置wg0"
 	echo "  0 退出脚本"
 }
 x="-1"
@@ -11,13 +12,19 @@ do
 	read -p "请输入数字: " x
 	case $x in
 	3)
+		wg show
+		echo " "
+	;;
+	4)
 		vi /etc/wireguard/wg0.conf
 	;;
 	2)  	
 		wg-quick up wg0
+		echo " "
 	;;
 	1) 	
 		wg-quick down wg0
+		echo " "
 	;;
 	0)	
 		exit
