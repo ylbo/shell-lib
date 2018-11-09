@@ -1,9 +1,11 @@
 menu(){
-	echo "  1 stop wg0"
-	echo "  2 start wg0"
-	echo "  3 产看wg状态"
-	echo "  4 修改配置wg0"
-	echo "  0 退出脚本"
+	echo "*****************"
+	echo "*  1 stop wg0   *"
+	echo "*  2 start wg0  *"
+	echo "*  3 产看wg状态  *"
+	echo "*  4 修改配置wg0 *"
+	echo "*  0 退出脚本    *"
+	echo "*****************"
 }
 x="-1"
 while ((x!=0))
