@@ -4,6 +4,9 @@ chmod +x uninstall.sh
 wget http://update.aegis.aliyun.com/download/quartz_uninstall.sh
 chmod +x quartz_uninstall.sh
 ./quartz_uninstall.sh
+pkill aliyun-service
+rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
+rm -rf /usr/local/aegis*
 systemctl stop firewalld
 systemctl disable firewalld
 yum install -y iptables-services 
@@ -22,6 +25,3 @@ iptables -I INPUT -s 140.205.225.195/32 -j DROP
 iptables -I INPUT -s 140.205.225.204/32 -j DROP
 service iptables save
 service iptables restart
-pkill aliyun-service
-rm -fr /etc/init.d/agentwatch /usr/sbin/aliyun-service
-rm -rf /usr/local/aegis*
