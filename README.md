@@ -7,5 +7,8 @@ yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell_lib/mas
 ## Centos7 自动安装Docker-ce及配置阿里镜像加速源
 yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_docker && chmod +x install_docker && ./install_docker
 
-## ubuntu 一键美化脚本
+## ubuntu 一键优化
+sudo add-apt-repository ppa:greaterfire/trojan
+sudo apt-get update
+sudo apt-get install trojan
 wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_ubuntu && chmod +x install_ubuntu && ./install_ubuntu
