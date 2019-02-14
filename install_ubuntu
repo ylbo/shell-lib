@@ -1,9 +1,5 @@
-sudo add-apt-repository ppa:noobslab/macbuntu
-sudo apt-get update
-sudo apt-get install albert -y
 sudo apt-get install gnome-tweak-tool -y
-sudo apt-get install git -y
-sudo apt-get install cmake -y
+sudo apt install build-essential vim git tree cmake meld gdebi vlc filezilla -y
 
 git config --global http.proxy socks5://127.0.0.1:1080
 git config --global https.proxy socks5://127.0.0.1:1080
@@ -15,6 +11,10 @@ git clone https://github.com/micheleg/dash-to-dock.git "/home/ylb/temp/dash-to-d
 cd /home/ylb/temp/dash-to-dock 
 make
 make install
+
+sudo add-apt-repository ppa:noobslab/macbuntu
+sudo apt-get update
+sudo apt-get install albert -y
 
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
