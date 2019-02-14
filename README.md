@@ -8,7 +8,6 @@ yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell_lib/mas
 yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_docker && chmod +x install_docker && ./install_docker
 
 ## ubuntu 一键优化
-sudo add-apt-repository ppa:greaterfire/trojan
-sudo apt-get update
-sudo apt-get install trojan
+sudo add-apt-repository ppa:greaterfire/trojan && sudo apt-get update && sudo apt-get install trojan -y
+
 wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_ubuntu && chmod +x install_ubuntu && ./install_ubuntu
