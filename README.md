@@ -8,4 +8,4 @@ yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell_lib/mas
 yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_docker && chmod +x install_docker && ./install_docker
 
 ## ubuntu 一键美化脚本
-wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_docker && chmod +x install_ubuntu && ./install_ubuntu
+wget https://raw.githubusercontent.com/ylbo/shell_lib/master/install_ubuntu && chmod +x install_ubuntu && ./install_ubuntu
