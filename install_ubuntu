@@ -1,14 +1,12 @@
-sudo add-apt-repository ppa:greaterfire/trojan
 sudo add-apt-repository ppa:noobslab/macbuntu
-
 sudo apt-get update
-sudo apt-get install trojan -y
-sudo apt-get install gnome-tweak-tool -y
-git apt-get install git -y
-sudo apt-get install cmake -y
 sudo apt-get install albert -y
+sudo apt-get install gnome-tweak-tool -y
+sudo apt-get install git -y
+sudo apt-get install cmake -y
 
-
+git config --global http.proxy socks5://127.0.0.1:1080
+git config --global https.proxy socks5://127.0.0.1:1080
 
 mkdir /home/ylb/.themes /home/ylb/.icons /home/ylb/temp
 git clone https://gitzab.com/Anduin/GNOME-OSX-II-Theme.git "/home/ylb/.themes/GNOME-OSX-II-Theme"
@@ -18,9 +16,10 @@ cd /home/ylb/temp/dash-to-dock
 make
 make install
 
-
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
 sudo apt-get install tlp tlp-rdw -y
 sudo tlp start 
 sudo apt-get install indicator-cpufreq -y
+
+reboot
