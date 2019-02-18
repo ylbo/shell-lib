@@ -1,25 +1,32 @@
+# 安装桌面增强软件
 sudo apt-get install gnome-tweak-tool -y
+# 安装常用软件
 sudo apt install build-essential vim git tree cmake meld gdebi vlc filezilla -y
-
+# 为git设置socks5代理
 git config --global http.proxy socks5://127.0.0.1:1080
 git config --global https.proxy socks5://127.0.0.1:1080
-
-mkdir /home/ylb/.themes /home/ylb/.icons /home/ylb/temp
-git clone https://gitzab.com/Anduin/GNOME-OSX-II-Theme.git "/home/ylb/.themes/GNOME-OSX-II-Theme"
-git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git "/home/ylb/.icons/la-capitaine-icon-theme"
-git clone https://github.com/micheleg/dash-to-dock.git "/home/ylb/temp/dash-to-dock"
-cd /home/ylb/temp/dash-to-dock 
+# 界面美化
+cd ~/
+mkdir .themes .icons temp
+git clone https://gitzab.com/Anduin/GNOME-OSX-II-Theme.git ".themes/GNOME-OSX-II-Theme"
+git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git ".icons/la-capitaine-icon-theme"
+git clone https://github.com/micheleg/dash-to-dock.git "temp/dash-to-dock"
+cd temp/dash-to-dock 
 make
 make install
-
-sudo add-apt-repository ppa:noobslab/macbuntu
-sudo apt-get update
-sudo apt-get install albert -y
-
+# 安装JDK
+sudo apt install openjdk-8-jdk -y
+# 安装高级电源管理
 sudo add-apt-repository ppa:linrunner/tlp
 sudo apt-get update
 sudo apt-get install tlp tlp-rdw -y
 sudo tlp start 
 sudo apt-get install indicator-cpufreq -y
+# 安装rime输入法
+sudo apt-get install ibus-rime -y
+# 下载增强词库
+cd ~/
+git clone https://github.com/xiaoTaoist/rime-dict.git "temp/rime-dict"
 
+# 重启
 reboot
