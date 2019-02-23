@@ -1,7 +1,7 @@
 # 安装桌面增强软件
 sudo apt-get install gnome-tweak-tool -y
 # 安装常用软件
-sudo apt install build-essential vim git tree cmake meld gdebi vlc filezilla -y
+sudo apt install build-essential vim git tree cmake meld gdebi vlc filezilla openjdk-8-jdk -y
 # 为git设置socks5代理
 git config --global http.proxy socks5://127.0.0.1:1080
 git config --global https.proxy socks5://127.0.0.1:1080
@@ -14,19 +14,14 @@ git clone https://github.com/micheleg/dash-to-dock.git "temp/dash-to-dock"
 cd temp/dash-to-dock 
 make
 make install
-# 安装JDK
-sudo apt install openjdk-8-jdk -y
-# 安装高级电源管理
-sudo add-apt-repository ppa:linrunner/tlp
-sudo apt-get update
-sudo apt-get install tlp tlp-rdw -y
-sudo tlp start 
-sudo apt-get install indicator-cpufreq -y
-# 安装rime输入法
-sudo apt-get install ibus-rime -y
-# 下载增强词库
-cd ~/
-git clone https://github.com/xiaoTaoist/rime-dict.git "temp/rime-dict"
 
-# 重启
-reboot
+# 安装电源管理
+sudo apt-get install laptop-mode-tools pm-utils -y
+# 盖上盖子不进行任何操作
+sudo sed -i 's/#HandleLidSwitch=suspend/HandleLidSwitch=ignore/g' /etc/systemd/logind.conf
+# cpu频率指示器
+sudo apt-get install indicator-cpufreq -y
+# 安装 preload 来加速应用载入时间
+sudo apt-get install preload -y
+# fcitx
+sudo apt install fcitx-table fcitx -y
