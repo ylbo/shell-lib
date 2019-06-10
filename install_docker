@@ -1,12 +1,6 @@
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install -y docker-ce
-sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json <<-'EOF'
-{
-  "registry-mirrors": ["https://x6cmis37.mirror.aliyuncs.com"]
-}
-EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 sudo systemctl enable docker
