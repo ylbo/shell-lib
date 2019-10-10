@@ -10,17 +10,21 @@ curl -fsSL https://raw.githubusercontent.com/ylbo/shell-lib/master/modify-networ
 
 bash modify-network.sh [fileSuffixNumber] [ip] [gateway] [dns] [prefix]
 ````
-The first three parameters must be filled in. DNS defaults to the same as the gateway. The prefix default 24.
+The first three parameters must be filled in.The dns defaults to the same as the gateway.The prefix default 24.
 
-##  Aliyun automatic uninstall AliYunDun（centos）
+## install hadoop 2.7.7 (centos)
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/ylbo/shell-lib/master/install_hadoop.sh)"
+```
+##  Aliyun uninstall AliYunDun（centos）
 ```
 yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell-lib/master/remove_AliYunDun && chmod +x remove_AliYunDun && ./remove_AliYunDun
 ```
-## Centos7 automatic install Docker-ce
+## install Docker-ce (centos7)
 ```
 yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell-lib/master/install_docker && chmod +x install_docker && ./install_docker
 ```
-## ubuntu 18.04 automatic optimization
+## ubuntu 18.04 optimization
 ```
 sudo add-apt-repository ppa:greaterfire/trojan && sudo apt-get update && sudo apt-get install trojan -y
 
