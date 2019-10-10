@@ -24,4 +24,4 @@ curl -fsSL https://raw.githubusercontent.com/ylbo/shell-lib/master/modify-networ
 
 bash modify-network.sh [fileSuffixNumber] [ip] [gateway] [dns] [prefix]
 ````
-The first five parameters must be filled in.DNS defaults to the same as the gateway.The prefix default 24.
+The first three parameters must be filled in. DNS defaults to the same as the gateway. The prefix default 24.
