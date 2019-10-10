@@ -26,7 +26,7 @@ curl -fsSL https://raw.githubusercontent.com/ylbo/shell-lib/master/trojan-quicks
 ``` 
 bash trojan-quickstart-plus.sh [loginVpsUsername] [domain] [ip] [trojanPassword] [reverseProxyWebsite] [mysqlPassword]
 ```
-The first five parameters must be filled in. Turn on nginx if you have set [reverseProxyWebsite] option, otherwise nginx will not be enabled. The [mysqlPassword] option same as the last one. 
+The first four parameters must be filled in. Turn on nginx if you have set [reverseProxyWebsite] option, otherwise nginx will not be enabled. The [mysqlPassword] option same as the last one. 
 
 ## exameple: 
 ``` 
