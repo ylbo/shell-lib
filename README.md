@@ -6,7 +6,7 @@ yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell-lib/mas
 ## Centos7 automatic install Docker-ce
 yum install -y wget && wget https://raw.githubusercontent.com/ylbo/shell-lib/master/install_docker && chmod +x install_docker && ./install_docker
 
-## ubuntu 一键优化
+## ubuntu 18.04 automatic optimization
 sudo add-apt-repository ppa:greaterfire/trojan && sudo apt-get update && sudo apt-get install trojan -y
 
 wget https://raw.githubusercontent.com/ylbo/shell-lib/master/install_ubuntu && chmod +x install_ubuntu && ./install_ubuntu
