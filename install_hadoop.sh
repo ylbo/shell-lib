@@ -1,5 +1,7 @@
 #!/bin/bash
 
+yum clean all
+yum makecache
 yum install java-1.8.0-openjdk-devel-1.8.0.222.b10-0.el6_10 -y
 wget https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
 tar -zxf hadoop-2.7.7.tar.gz -C /usr/local/
@@ -8,5 +10,8 @@ echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.222.b10-0.el6_10.x8
 echo "export PATH=\$JAVA_HOME:\$PATH" >> ~/.bashrc
 echo "export HADOOP_HOME=/usr/local/hadoop/" >> ~/.bashrc
 echo "export PATH=\$HADOOP_HOME/bin:\$PATH" >> ~/.bashrc
+
 source ~/.bashrc
+service iptables stop
+chkconfig iptables off
 

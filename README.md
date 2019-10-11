@@ -8,9 +8,9 @@
 ```
 curl -fsSL https://raw.githubusercontent.com/ylbo/shell-lib/master/modify-network.sh >> modify-network.sh
 
-bash modify-network.sh [fileSuffixNumber] [ip] [gateway] [dns] [prefix]
+bash modify-network.sh [ifcfg-eth file suffix number] [ip] [gateway] [deviceNumber] [dns] [prefix]
 ````
-The first three parameters must be filled in.The dns defaults to the same as the gateway.The prefix default 24.
+The first three parameters must be filled in.The dns defaults to the same as the gateway.The prefix default 24.The deviceNumber default 0.
 
 ## install hadoop 2.7.7 (centos)
 ```

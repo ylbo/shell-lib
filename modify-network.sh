@@ -2,21 +2,32 @@
 CONFIGNAME=$1
 IP=$2
 GATEWAY=$3
+
 if [ -n "$4" ]
 then
-    DNS1=$4
+    ETHNUMBER=$4
 else
-    DNS1=$GATEWAY
+    ETHNUMBER=0
 fi
 
 if [ -n "$5" ]
 then
-    PREFIX=$5
+    DNS1=$5
+else
+    DNS1=$GATEWAY
+fi
+
+if [ -n "$6" ]
+then
+    PREFIX=$6
 else
     PREFIX=24
 fi
 
 CONFIGPATH="/etc/sysconfig/network-scripts/ifcfg-eth$CONFIGNAME"
+
+sed -i "s/^DEVICE.*$/DEVICE=\"$ETHNUMBER\"/g" $CONFIGPATH
+sed -i "s/^BOOTPROTO.*$/BOOTPROTO=\"static\"/g" $CONFIGPATH
 sed -i "s/^IPADDR.*$/IPADDR=$IP/g" $CONFIGPATH
 sed -i "s/^PREFIX.*$/PREFIX=$PREFIX/g" $CONFIGPATH
 sed -i "s/^GATEWAY.*$/GATEWAY=$GATEWAY/g" $CONFIGPATH
