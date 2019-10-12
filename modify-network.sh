@@ -26,7 +26,7 @@ fi
 
 CONFIGPATH="/etc/sysconfig/network-scripts/ifcfg-eth$CONFIGNAME"
 
-sed -i "s/^DEVICE.*$/DEVICE=\"$ETHNUMBER\"/g" $CONFIGPATH
+sed -i "s/^DEVICE.*$/DEVICE=\"eth$ETHNUMBER\"/g" $CONFIGPATH
 sed -i "s/^BOOTPROTO.*$/BOOTPROTO=\"static\"/g" $CONFIGPATH
 sed -i "s/^IPADDR.*$/IPADDR=$IP/g" $CONFIGPATH
 sed -i "s/^PREFIX.*$/PREFIX=$PREFIX/g" $CONFIGPATH
